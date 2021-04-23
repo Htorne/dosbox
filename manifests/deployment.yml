@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: htornedosbox 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: htornedosbox
+  template:
+    metadata:
+      labels:
+        app: htornedosbox 
+    spec:
+      containers:
+        - name: htornedosbox 
+          image: acrk8s1.azurecr.io/htornedosbox
+          ports:
+          - containerPort: 666
